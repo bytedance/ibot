@@ -1,0 +1,9 @@
+Dog         n02084071
+Bird        n01503061
+Vehicle     n04576211
+Reptile     n01661091
+Carnivore   n02075296
+Insect      n02159955
+Instrument  n03800933
+Primate     n02469914
+Fish        n02512053
