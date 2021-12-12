@@ -56,7 +56,7 @@ For example, run iBOT with ViT-S/16 network on two nodes with 8 GPUs for 800 epo
 ```
 
 ### iBOT Pre-Training with Swins
-This code also works for training iBOT on Swin Transformer (Swin). In the paper, we only conduct experiments on Swin-T with different window size:
+This code also works for training iBOT on Swin Transformer (Swin). In the paper, we only conduct experiments on Swin-T with different window sizes:
 ```
 ./run.sh imagenet_pretrain $JOB_NAME swin_tiny teacher {16,40} \
   --patch_size 4 \
