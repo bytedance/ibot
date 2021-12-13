@@ -225,7 +225,7 @@ or extracting sparse correspondence pairs between two images:
   <img heigh="85%" width="75%" alt="iBOT Global Pattern Layout" src=".github/corresp.png">
 </div>
 
-We also provide a [Colab page](https://colab.research.google.com/drive/1qgCqaYfOAKGXyFpbJ4bRtBjrF6kEL1in?usp=sharing) :bookmark_tabs:$~$ you can play around with iBOT pre-trained models.
+We also provide a [Colab page](https://colab.research.google.com/drive/1qgCqaYfOAKGXyFpbJ4bRtBjrF6kEL1in?usp=sharing) :bookmark_tabs: you can play around with iBOT pre-trained models.
 
 ## Extracting Semantic Patterns
 
