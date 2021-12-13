@@ -11,10 +11,11 @@ Official PyTorch implementation and pretrained models for paper **iBOT: Image BE
   <img width="90%" alt="iBOT framework" src=".github/framework.png">
 </div>
 
-iBOT is a novel self-supervised pre-training framework that performs masked image modeling with self-distillation. iBOT pre-trained model shows local semantic features, which helps the model transfer well to downstream tasks both at a global scale and a local scale. For example, iBOT achieves strong performance on COCO object detection (**51.4 box AP** and **44.2 mask AP**) and ADE20K semantic segmentation (**50.0 mIoU**) with vanilla ViT-B/16. iBOT can also extract semantic-meaningful local parts, like **dog's ear :dog:**.
+iBOT is a novel self-supervised pre-training framework that performs masked image modeling with self-distillation. iBOT pre-trained model shows local semantic features, which helps the model transfer well to downstream tasks both at a global scale and a local scale. For example, iBOT achieves strong performance on COCO object detection (**51.2 box AP** and **44.2 mask AP**) and ADE20K semantic segmentation (**50.0 mIoU**) with vanilla ViT-B/16. iBOT can also extract semantic-meaningful local parts, like **dog's ear :dog:**.
 
 
 ## Update :tada:
+- Update - ViT-B/16 with random masking and a relatively larger prediction ratio [0.65, 0.75] perform slighly better than block-wise masking with the ratio [0.1, 0.5]. For example, this model can achieve an **84.0%** accuracy in ImageNet-1K fine-tuning and a **51.4 box AP** in COCO object detection.
 - December 2021 - Release the code and pre-trained [models](https://github.com/bytedance/ibot#pre-trained-models).
 - November 2021 - Release the pre-print on [arXiv](https://arxiv.org/abs/2111.07832).
 
@@ -86,12 +87,13 @@ For example, run iBOT with Swin-T/14 network on five nodes with 8 GPUS for 300 e
 
 ## Pre-Trained Models
 
-You can choose to download only the weights of the pretrained `backbone` used for downstream tasks, and the `full ckpt` which contains backbone and projection head weights for both student and teacher networks. For the `backbone`, `s` denotes that the student network is selected while `t` denotes that the teacher network is selected. 
+You can choose to download only the weights of the pretrained `backbone` used for downstream tasks, and the `full ckpt` which contains backbone and projection head weights for both student and teacher networks. For the `backbone`, `s` denotes that the student network is selected while `t` denotes that the teacher network is selected. `PS` denotes prediction shape.
 
 <table>
   <tr>
     <th>Arch.</th>
     <th>Par.</th>
+    <th>PS</th>
     <th>k-NN</th>
     <th>Lin.</th>
     <th>Fin.</th>
@@ -100,6 +102,7 @@ You can choose to download only the weights of the pretrained `backbone` used fo
   <tr>
     <td>ViT-S/16</td>
     <td>21M</td>
+    <td>Block</td>
     <td>74.5%</td>
     <td>77.0%</td>
     <td>82.3%</td>
@@ -111,6 +114,7 @@ You can choose to download only the weights of the pretrained `backbone` used fo
   <tr>
     <td>Swin-T/7</td>
     <td>28M</td>
+    <td>Block</td>
     <td>75.3%</td>
     <td>78.6%</td>
     <td>\</td>
@@ -122,6 +126,7 @@ You can choose to download only the weights of the pretrained `backbone` used fo
   <tr>
     <td>Swin-T/14</td>
     <td>28M</td>
+    <td>Block</td>
     <td>76.2%</td>
     <td>79.3%</td>
     <td>\</td>
@@ -133,6 +138,7 @@ You can choose to download only the weights of the pretrained `backbone` used fo
   <tr>
     <td>ViT-B/16</td>
     <td>85M</td>
+    <td>Block</td>
     <td>77.1%</td>
     <td>79.5%</td>
     <td>83.8%</td>
@@ -140,6 +146,18 @@ You can choose to download only the weights of the pretrained `backbone` used fo
     <td><a href="https://drive.google.com/file/d/1bAiCA4UthX12kzzrG16FCj-BKYluoyY_/view?usp=sharing">full ckpt</a></td>
     <td><a href="https://drive.google.com/file/d/1p3vZNBVhKf_i_Y_Zveai5lIP5YD422n0/view?usp=sharing">args</a></td>
     <td><a href="https://drive.google.com/file/d/1UFYSd4o7yQXM5sRO75gAzyliEwezkae5/view?usp=sharing">logs</a></td>
+  </tr>
+  <tr>
+    <td>ViT-B/16</td>
+    <td>85M</td>
+    <td>Rand</td>
+    <td>77.3%</td>
+    <td>79.8%</td>
+    <td>84.0%</td>
+    <td><a href="https://drive.google.com/file/d/1Ffgb0gZgoDma9JjcMA5FRdtbgc3OlJ8p/view?usp=sharing">backbone (t)</a></td>
+    <td><a href="https://drive.google.com/file/d/1mRnI99p0l02LPSBcLbDIvJMqICFHaw9z/view?usp=sharing">full ckpt</a></td>
+    <td><a href="https://drive.google.com/file/d/1qgoN_NgHCmfMiwjyfwMhRIYirqbSPu1H/view?usp=sharing">args</a></td>
+    <td><a href="https://drive.google.com/file/d/1qC-lXpCvatWDraT9IgJmbqXPMYNqdv9W/view?usp=sharing">logs</a></td>
   </tr>
 </table>
 
@@ -149,6 +167,7 @@ We also provide the ViT-{B,L}/16 model pre-trained on ImageNet-22K dataset.
   <tr>
     <th>Arch.</th>
     <th>Par.</th>
+    <th>PS</th>
     <th>k-NN</th>
     <th>Lin.</th>
     <th>Fin.</th>
@@ -157,6 +176,7 @@ We also provide the ViT-{B,L}/16 model pre-trained on ImageNet-22K dataset.
   <tr>
     <td>ViT-B/16</td>
     <td>85M</td>
+    <td>Block</td>
     <td>71.1%</td>
     <td>79.0%</td>
     <td>84.4%</td>
@@ -168,6 +188,7 @@ We also provide the ViT-{B,L}/16 model pre-trained on ImageNet-22K dataset.
   <tr>
     <td>ViT-L/16</td>
     <td>307M</td>
+    <td>Block</td>
     <td>70.6%</td>
     <td>81.7%</td>
     <td>86.3%</td>
