@@ -5,7 +5,7 @@
 
 Official PyTorch implementation and pretrained models for paper **iBOT: Image BERT Pre-Training with Online Tokenizer**. 
 
-[[`arXiv`](https://arxiv.org/abs/2111.07832)] [[`Colab`](https://github.com/bytedance/ibot/blob/main/notebooks/iBOT_demo.ipynb)] [[`BibTex`](https://github.com/bytedance/ibot#citing-ibot)]
+[[`arXiv`](https://arxiv.org/abs/2111.07832)] [[`Colab`](https://colab.research.google.com/github/bytedance/ibot/blob/main/notebooks/iBOT_demo.ipynb)] [[`BibTex`](https://github.com/bytedance/ibot#citing-ibot)]
 
 <div align="center">
   <img width="90%" alt="iBOT framework" src=".github/framework.png">
@@ -225,7 +225,7 @@ or extracting sparse correspondence pairs between two images:
   <img heigh="85%" width="75%" alt="iBOT Global Pattern Layout" src=".github/corresp.png">
 </div>
 
-We also provide a [Colab page](https://github.com/bytedance/ibot/blob/main/notebooks/iBOT_demo.ipynb) :bookmark_tabs: you can play around with iBOT pre-trained models.
+We also provide a [Colab page](https://colab.research.google.com/github/bytedance/ibot/blob/main/notebooks/iBOT_demo.ipynb) :bookmark_tabs: you can play around with iBOT pre-trained models.
 
 ## Extracting Semantic Patterns
 
