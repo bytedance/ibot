@@ -277,7 +277,7 @@ if __name__ == '__main__':
         contour = False
         alpha = 1
         figsize = tuple([i / 100 for i in args.image_size])
-        fig = plt.figure(figsize=figsize, frameon=False)
+        fig = plt.figure(figsize=figsize, frameon=False, dpi=100)
         ax = plt.Axes(fig, [0., 0., 1., 1.])
         ax.set_axis_off()
         fig.add_axes(ax)
@@ -359,10 +359,10 @@ if __name__ == '__main__':
         img = img[:, :w, :h].unsqueeze(0)
         attentions, th_attn, pic_i, pic_attn = show_attn(img)
         pic_attn_color = show_attn_color(img.permute(1, 2, 0).cpu().numpy(), attentions, th_attn)
-        final_pic = Image.new('RGB', (pic_attn.size[0], pic_i.size[1] * 2))
+        final_pic = Image.new('RGB', (pic_i.size[1] * 2 + pic_attn.size[0], pic_i.size[1]))
         final_pic.paste(pic_i, (0, 0))
         final_pic.paste(pic_attn_color, (pic_i.size[1], 0))
-        final_pic.paste(pic_attn, (0, pic_i.size[1]))
+        final_pic.paste(pic_attn, (pic_i.size[1] * 2, 0))
         final_pic.save(os.path.join(args.output_dir, f"attn.png"))
     
     else:
