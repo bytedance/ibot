@@ -22,19 +22,19 @@ Note: `LINEAR_AVGPOOL` and `LINEAR_N_LAST_BLOCKS` control the specific feature d
 
 To fine-tune the pre-trained model, we apply layerwise decay and sweep the learning rate. 
 
-To train ViT-S/16 with $200$ epochs, run:
+To train ViT-S/16 with 200 epochs, run:
 ```
 ./run.sh imagenet_cls $JOB_NAME vit_small teacher 8 \
   --epochs 200 \
   --layer_decay 0.75
 ```
-To train ViT-B/16 with $100$ epochs, run:
+To train ViT-B/16 with 100 epochs, run:
 ```
 ./run.sh imagenet_cls $JOB_NAME vit_base teacher 8 \
   --epochs 100 \
   --layer_decay 0.65
 ```
-To train ViT-L/16 with $50$ epochs, run:
+To train ViT-L/16 with 50 epochs, run:
 ```
 ./run.sh imagenet_cls $JOB_NAME vit_large teacher 8 \
   --epochs 50 \
@@ -51,7 +51,7 @@ To evaluate for unsupervised classification, run:
 ```
 /run.sh imagenet_unsup_cls $JOB_NAME vit_{small,base} teacher 8
 ``` 
-Note: To ensure one-to-one assignment, the output dimension of projection head for [CLS] token (also patch tokens for iBOT) should be set to 1000 during pre-training. The models are available [here](somelink).
+Note: To ensure one-to-one assignment, the output dimension of projection head for [CLS] token (also patch tokens for iBOT) should be set to 1000 during pre-training. We here share this pre-trained [model](https://drive.google.com/file/d/19VZnL0u-oT0dyv-6dGWKNiC43t4V9AJ_/view?usp=sharing) with its [args](https://drive.google.com/file/d/1kir84n1fyAZEfFc-H-N3SsTZNKuv44Ai/view?usp=sharing).
 
 ### Semi-Supervised Classification on ImageNet
 

@@ -15,7 +15,7 @@ iBOT is a novel self-supervised pre-training framework that performs masked imag
 
 
 ## Update :tada:
-- Update - ViT-B/16 with random masking and a relatively larger prediction ratio [0.65, 0.75] perform slighly better than block-wise masking with the ratio [0.1, 0.5]. For example, this model can achieve an **84.0%** accuracy in ImageNet-1K fine-tuning and a **51.4 box AP** in COCO object detection.
+- Update - ViT-B/16 with random masking and a relatively larger prediction ratio [0.65, 0.75] perform slighly better than block-wise masking with the ratio [0.1, 0.5]. For example, this model can achieve an **84.0%** accuracy in ImageNet-1K fine-tuning and a **51.5 box AP** in COCO object detection.
 - December 2021 - Release the code and pre-trained [models](https://github.com/bytedance/ibot#pre-trained-models).
 - November 2021 - Release the pre-print on [arXiv](https://arxiv.org/abs/2111.07832).
 
