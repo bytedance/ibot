@@ -220,7 +220,7 @@ See [Analyzing iBOT's Properties](https://github.com/bytedance/ibot/blob/main/an
   <img width="100%" alt="iBOT Global Pattern Layout" src=".github/attnmap.png">
 </div>
 
-or extracting sparse correspondence pairs bwtween two images: 
+or extracting sparse correspondence pairs between two images: 
 <div align="center">
   <img heigh="85%" width="75%" alt="iBOT Global Pattern Layout" src=".github/corresp.png">
 </div>
