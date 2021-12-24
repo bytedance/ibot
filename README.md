@@ -3,7 +3,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ibot-image-bert-pre-training-with-online/self-supervised-image-classification-on)](https://paperswithcode.com/sota/self-supervised-image-classification-on?p=ibot-image-bert-pre-training-with-online)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ibot-image-bert-pre-training-with-online/self-supervised-image-classification-on-1)](https://paperswithcode.com/sota/self-supervised-image-classification-on-1?p=ibot-image-bert-pre-training-with-online)
 
-Official PyTorch implementation and pretrained models for paper **iBOT: Image BERT Pre-Training with Online Tokenizer**. 
+Official PyTorch implementation and pre-trained models for paper **iBOT: Image BERT Pre-Training with Online Tokenizer**. 
 
 [[`arXiv`](https://arxiv.org/abs/2111.07832)] [[`Colab`](https://colab.research.google.com/github/bytedance/ibot/blob/main/notebooks/iBOT_demo.ipynb)] [[`BibTex`](https://github.com/bytedance/ibot#citing-ibot)]
 
@@ -87,7 +87,7 @@ For example, run iBOT with Swin-T/14 network on five nodes with 8 GPUS for 300 e
 
 ## Pre-Trained Models
 
-You can choose to download only the weights of the pretrained `backbone` used for downstream tasks, and the `full ckpt` which contains backbone and projection head weights for both student and teacher networks. For the `backbone`, `s` denotes that the student network is selected while `t` denotes that the teacher network is selected. `PS` denotes prediction shape.
+You can choose to download only the weights of the pre-trained `backbone` used for downstream tasks, and the `full ckpt` which contains backbone and projection head weights for both student and teacher networks. For the `backbone`, `s` denotes that the student network is selected while `t` denotes that the teacher network is selected. `PS` denotes prediction shape.
 
 <table>
   <tr>
