@@ -26,22 +26,24 @@ To train ViT-S/16 with 200 epochs, run:
 ```
 ./run.sh imagenet_cls $JOB_NAME vit_small teacher 8 \
   --epochs 200 \
+  --drop_path 0.1 \
   --layer_decay 0.75
 ```
 To train ViT-B/16 with 100 epochs, run:
 ```
 ./run.sh imagenet_cls $JOB_NAME vit_base teacher 8 \
   --epochs 100 \
+  --drop_path 0.2 \
   --layer_decay 0.65
 ```
 To train ViT-L/16 with 50 epochs, run:
 ```
 ./run.sh imagenet_cls $JOB_NAME vit_large teacher 8 \
   --epochs 50 \
+  --drop_path 0.4 \
   --layer_decay 0.75 \
   --batch_size 64 \
   --enable_deepspeed \
-  --drop_path 0.2 \
   --warmup_epochs 5 \
   --update_freq 2
 ```

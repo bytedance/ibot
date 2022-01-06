@@ -302,7 +302,6 @@ if __name__ == '__main__':
         #     company_colors[1] = tmp
         colors = company_colors[:N]
 
-
         # Show area outside image boundaries.
         height, width = image.shape[:2]
         margin = 0

@@ -15,7 +15,7 @@ iBOT is a novel self-supervised pre-training framework that performs masked imag
 
 
 ## Update :tada:
-- Update - ViT-B/16 with random masking and a relatively larger prediction ratio [0.65, 0.75] perform slighly better than block-wise masking with the ratio [0.1, 0.5]. For example, this model can achieve an **84.0%** accuracy in ImageNet-1K fine-tuning and a **51.5 box AP** in COCO object detection.
+- Update - ViT-B/16 with random masking and a relatively larger prediction ratio [0.65, 0.75] perform slighly better than block-wise masking with the ratio [0.1, 0.5]. For example, this model can achieve an **84.1%** accuracy in ImageNet-1K fine-tuning and a **51.5 box AP** in COCO object detection.
 - December 2021 - Release the code and pre-trained [models](https://github.com/bytedance/ibot#pre-trained-models).
 - November 2021 - Release the pre-print on [arXiv](https://arxiv.org/abs/2111.07832).
 
@@ -103,8 +103,8 @@ You can choose to download only the weights of the pre-trained `backbone` used f
     <td>ViT-S/16</td>
     <td>21M</td>
     <td>Block</td>
-    <td>74.5%</td>
-    <td>77.0%</td>
+    <td>75.2%</td>
+    <td>77.9%</td>
     <td>82.3%</td>
     <td><a href="https://drive.google.com/file/d/1di_xSqKxEwp7TFkis8fWkhYOYH1PagkH/view?usp=sharing">backbone (t)</a></td>
     <td><a href="https://drive.google.com/file/d/1IE6_NeborP5GQa0kufn2tdTk7lrg5QYd/view?usp=sharing">full ckpt</a></td>
@@ -141,7 +141,7 @@ You can choose to download only the weights of the pre-trained `backbone` used f
     <td>Block</td>
     <td>77.1%</td>
     <td>79.5%</td>
-    <td>83.8%</td>
+    <td>84.0%</td>
     <td><a href="https://drive.google.com/file/d/1JgdVNX0zjYy9AoUEZO0BILOlFVH-1Vfu/view?usp=sharing">backbone (t)</a></td>
     <td><a href="https://drive.google.com/file/d/1bAiCA4UthX12kzzrG16FCj-BKYluoyY_/view?usp=sharing">full ckpt</a></td>
     <td><a href="https://drive.google.com/file/d/1p3vZNBVhKf_i_Y_Zveai5lIP5YD422n0/view?usp=sharing">args</a></td>
@@ -153,12 +153,36 @@ You can choose to download only the weights of the pre-trained `backbone` used f
     <td>Rand</td>
     <td>77.3%</td>
     <td>79.8%</td>
-    <td>84.0%</td>
+    <td>84.1%</td>
     <td><a href="https://drive.google.com/file/d/1Ffgb0gZgoDma9JjcMA5FRdtbgc3OlJ8p/view?usp=sharing">backbone (t)</a></td>
     <td><a href="https://drive.google.com/file/d/1mRnI99p0l02LPSBcLbDIvJMqICFHaw9z/view?usp=sharing">full ckpt</a></td>
     <td><a href="https://drive.google.com/file/d/1qgoN_NgHCmfMiwjyfwMhRIYirqbSPu1H/view?usp=sharing">args</a></td>
     <td><a href="https://drive.google.com/file/d/1qC-lXpCvatWDraT9IgJmbqXPMYNqdv9W/view?usp=sharing">logs</a></td>
   </tr>
+  <!-- <tr>
+    <td>ViT-L/16</td>
+    <td>307M</td>
+    <td>Block</td>
+    <td>78.0%</td>
+    <td>81.0%</td>
+    <td>84.8%</td>
+    <td><a href="">backbone (t)</a></td>
+    <td><a href="">full ckpt</a></td>
+    <td><a href="">args</a></td>
+    <td><a href="">logs</a></td>
+  </tr> -->
+  <!-- <tr>
+    <td>ViT-L/16</td>
+    <td>307M</td>
+    <td>Rand</td>
+    <td>%</td>
+    <td>%</td>
+    <td>%</td>
+    <td><a href="">backbone (t)</a></td>
+    <td><a href="">full ckpt</a></td>
+    <td><a href="">args</a></td>
+    <td><a href="">logs</a></td>
+  </tr> -->
 </table>
 
 We also provide the ViT-{B,L}/16 model pre-trained on ImageNet-22K dataset.
@@ -191,8 +215,8 @@ We also provide the ViT-{B,L}/16 model pre-trained on ImageNet-22K dataset.
     <td>Block</td>
     <td>70.6%</td>
     <td>81.7%</td>
-    <td>86.3%</td>
-    <td><a href="https://drive.google.com/file/d/1wmTENIXLy4JlzG-HoKUE3OZBJuPPA-Vm/view?usp=sharing">backbone (s)</a></td>
+    <td>86.6%</td>
+    <td><a href="https://drive.google.com/file/d/1KgtjSBdR-KFGmZnMnvAo5wvfzs880FcJ/view?usp=sharing">backbone (t)</a></td>
     <td><a href="https://drive.google.com/file/d/1J4vEXLoZHGhu-fxCsUC3rpPoU_4izNxl/view?usp=sharing">full ckpt</a></td>
     <td><a href="https://drive.google.com/file/d/1kVRhIk1FNggIwFouZyhxUNQ1efJHhti2/view?usp=sharing">args</a></td>
     <td><a href="https://drive.google.com/file/d/1dJZfLyx6OSHjCCaipoh4jZfESgzmWVnL/view?usp=sharing">logs</a></td>
