@@ -1,6 +1,7 @@
 data/
 data
 work_dirs/
+work_dirs
 *.zip
 __pycache__/
 .*

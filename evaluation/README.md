@@ -53,7 +53,7 @@ To evaluate for unsupervised classification, run:
 ```
 /run.sh imagenet_unsup_cls $JOB_NAME vit_{small,base} teacher 8
 ``` 
-Note: To ensure one-to-one assignment, the output dimension of projection head for [CLS] token (also patch tokens for iBOT) should be set to 1000 during pre-training. We here share this pre-trained [model](https://drive.google.com/file/d/19VZnL0u-oT0dyv-6dGWKNiC43t4V9AJ_/view?usp=sharing) with its [args](https://drive.google.com/file/d/1kir84n1fyAZEfFc-H-N3SsTZNKuv44Ai/view?usp=sharing).
+Note: To ensure one-to-one assignment, the output dimension of projection head for [CLS] token (also patch tokens for iBOT) should be set to 1000 during pre-training. We here share this pre-trained [model](https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vits_16_out_dim_1000/checkpoint.pth) with its [args](https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vits_16_out_dim_1000/args.txt).
 
 ### Semi-Supervised Classification on ImageNet
 

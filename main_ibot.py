@@ -45,7 +45,7 @@ def get_args_parser():
         mixed precision training (--use_fp16 false) to avoid unstabilities.""")
     parser.add_argument('--window_size', default=7, type=int, help="""Size of window - default 7.
         This config is only valid for Swin Transofmer and is ignoired for vanilla ViT architectures.""")
-    parser.add_argument('--out_dim', default=65536, type=int, help="""Dimensionality of
+    parser.add_argument('--out_dim', default=8192, type=int, help="""Dimensionality of
         output for [CLS] token.""")
     parser.add_argument('--patch_out_dim', default=8192, type=int, help="""Dimensionality of
         output for patch tokens.""")

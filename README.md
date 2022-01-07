@@ -15,7 +15,8 @@ iBOT is a novel self-supervised pre-training framework that performs masked imag
 
 
 ## Update :tada:
-- Update - ViT-B/16 with random masking and a relatively larger prediction ratio [0.65, 0.75] perform slighly better than block-wise masking with the ratio [0.1, 0.5]. For example, this model can achieve an **84.1%** accuracy in ImageNet-1K fine-tuning and a **51.5 box AP** in COCO object detection.
+- Update - ViT-L/16 with ImageNet-1K pre-training achieves **81.0%** in linear probing accuracy. ViT-L/16 with ImageNet-22K pre-training achieves **87.7%** in 512x fine-tuning accuracy.
+- Update - Random masking with a relatively larger prediction ratio [0.65, 0.75] performs slighly better than block-wise masking. For example, ViT-B/16 achieves an **84.1%** fine-tuning accuracy and a **51.5 box AP** in object detection.
 - December 2021 - Release the code and pre-trained [models](https://github.com/bytedance/ibot#pre-trained-models).
 - November 2021 - Release the pre-print on [arXiv](https://arxiv.org/abs/2111.07832).
 
@@ -106,10 +107,10 @@ You can choose to download only the weights of the pre-trained `backbone` used f
     <td>75.2%</td>
     <td>77.9%</td>
     <td>82.3%</td>
-    <td><a href="https://drive.google.com/file/d/1di_xSqKxEwp7TFkis8fWkhYOYH1PagkH/view?usp=sharing">backbone (t)</a></td>
-    <td><a href="https://drive.google.com/file/d/1IE6_NeborP5GQa0kufn2tdTk7lrg5QYd/view?usp=sharing">full ckpt</a></td>
-    <td><a href="https://drive.google.com/file/d/1RUE2jHeR1HntHTWvZS69Hl6XuvuhdYGR/view?usp=sharing">args</a></td>
-    <td><a href="https://drive.google.com/file/d/11J3NW9WJ6TPzmS_fy_wlth6S2IDTmmi1/view?usp=sharing">logs</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vits_16/checkpoint_teacher.pth">backbone (t)</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vits_16/checkpoint.pth">full ckpt</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vits_16/args.txt">args</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vits_16/log.txt">logs</a></td>
   </tr>
   <tr>
     <td>Swin-T/7</td>
@@ -118,10 +119,10 @@ You can choose to download only the weights of the pre-trained `backbone` used f
     <td>75.3%</td>
     <td>78.6%</td>
     <td>\</td>
-    <td><a href="https://drive.google.com/file/d/17gMXk9yUVk03lkgVoFXY0bgR3WOjdzSE/view?usp=sharing">backbone (t)</a></td>
-    <td><a href="https://drive.google.com/file/d/13WdtV0U9get-tqb4TzCEyJ_6P02MWtkW/view?usp=sharing">full ckpt</a></td>
-    <td><a href="https://drive.google.com/file/d/1RtBqcUKqFeGPnYJA3KVMtqyFHimvBDCD/view?usp=sharing">args</a></td>
-    <td><a href="https://drive.google.com/file/d/1OFeq5f7ZV2zBVZjDubOqcoBQOTCdBXZf/view?usp=sharing">logs</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/swint_7/checkpoint_teacher.pth">backbone (t)</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/swint_7/checkpoint.pth">full ckpt</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/swint_7/args.txt">args</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/swint_7/log.txt">logs</a></td>
   </tr>
   <tr>
     <td>Swin-T/14</td>
@@ -130,10 +131,10 @@ You can choose to download only the weights of the pre-trained `backbone` used f
     <td>76.2%</td>
     <td>79.3%</td>
     <td>\</td>
-    <td><a href="https://drive.google.com/file/d/1vGyXH_DtyNNukm63z_6IJ1FvTlj6BnT9/view?usp=sharing">backbone (t)</a></td>
-    <td><a href="https://drive.google.com/file/d/15cSbRpB6dmwlyF3hXPVVTO0EN7R3r_hw/view?usp=sharing">full ckpt</a></td>
-    <td><a href="https://drive.google.com/file/d/1iKYmhcznn5TFnXaK2ZqHtpqIqhWYgDUx/view?usp=sharing">args</a></td>
-    <td><a href="https://drive.google.com/file/d/1zvRHveoiP0t6qH42N1A78tuD8JxHr0V8/view?usp=sharing">logs</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/swint_14/checkpoint_teacher.pth">backbone (t)</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/swint_14/checkpoint.pth">full ckpt</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/swint_14/args.txt">args</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/swint_14/log.txt">logs</a></td>
   </tr>
   <tr>
     <td>ViT-B/16</td>
@@ -142,10 +143,10 @@ You can choose to download only the weights of the pre-trained `backbone` used f
     <td>77.1%</td>
     <td>79.5%</td>
     <td>84.0%</td>
-    <td><a href="https://drive.google.com/file/d/1JgdVNX0zjYy9AoUEZO0BILOlFVH-1Vfu/view?usp=sharing">backbone (t)</a></td>
-    <td><a href="https://drive.google.com/file/d/1bAiCA4UthX12kzzrG16FCj-BKYluoyY_/view?usp=sharing">full ckpt</a></td>
-    <td><a href="https://drive.google.com/file/d/1p3vZNBVhKf_i_Y_Zveai5lIP5YD422n0/view?usp=sharing">args</a></td>
-    <td><a href="https://drive.google.com/file/d/1UFYSd4o7yQXM5sRO75gAzyliEwezkae5/view?usp=sharing">logs</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16/checkpoint_teacher.pth">backbone (t)</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16/checkpoint.pth">full ckpt</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16/args.txt">args</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16/log.txt">logs</a></td>
   </tr>
   <tr>
     <td>ViT-B/16</td>
@@ -154,48 +155,41 @@ You can choose to download only the weights of the pre-trained `backbone` used f
     <td>77.3%</td>
     <td>79.8%</td>
     <td>84.1%</td>
-    <td><a href="https://drive.google.com/file/d/1Ffgb0gZgoDma9JjcMA5FRdtbgc3OlJ8p/view?usp=sharing">backbone (t)</a></td>
-    <td><a href="https://drive.google.com/file/d/1mRnI99p0l02LPSBcLbDIvJMqICFHaw9z/view?usp=sharing">full ckpt</a></td>
-    <td><a href="https://drive.google.com/file/d/1qgoN_NgHCmfMiwjyfwMhRIYirqbSPu1H/view?usp=sharing">args</a></td>
-    <td><a href="https://drive.google.com/file/d/1qC-lXpCvatWDraT9IgJmbqXPMYNqdv9W/view?usp=sharing">logs</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16_rand_mask/checkpoint_teacher.pth">backbone (t)</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16_rand_mask/checkpoint.pth">full ckpt</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16_rand_mask/args.txt">args</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16_rand_mask/log.txt">logs</a></td>
   </tr>
-  <!-- <tr>
+  <tr>
     <td>ViT-L/16</td>
     <td>307M</td>
     <td>Block</td>
     <td>78.0%</td>
     <td>81.0%</td>
     <td>84.8%</td>
-    <td><a href="">backbone (t)</a></td>
-    <td><a href="">full ckpt</a></td>
-    <td><a href="">args</a></td>
-    <td><a href="">logs</a></td>
-  </tr> -->
-  <!-- <tr>
-    <td>ViT-L/16</td>
-    <td>307M</td>
-    <td>Rand</td>
-    <td>%</td>
-    <td>%</td>
-    <td>%</td>
-    <td><a href="">backbone (t)</a></td>
-    <td><a href="">full ckpt</a></td>
-    <td><a href="">args</a></td>
-    <td><a href="">logs</a></td>
-  </tr> -->
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16/checkpoint_teacher.pth">backbone (t)</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16/checkpoint.pth">full ckpt</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16/args.txt">args</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16/log.txt">logs</a></td>
+  </tr>
 </table>
 
 We also provide the ViT-{B,L}/16 model pre-trained on ImageNet-22K dataset.
 
  <table>
   <tr>
-    <th>Arch.</th>
-    <th>Par.</th>
-    <th>PS</th>
-    <th>k-NN</th>
-    <th>Lin.</th>
-    <th>Fin.</th>
-    <th colspan="6">download</th>
+    <th rowspan="2">Arch.</th>
+    <th rowspan="2">Par.</th>
+    <th rowspan="2">PS</th>
+    <th rowspan="2">k-NN</th>
+    <th rowspan="2">Lin.</th>
+    <th colspan="3">Fin.</th>
+    <th rowspan="2" colspan="6">download</th>
+  </tr>
+  <tr>
+  <th>256</th>
+  <th>384</th>
+  <th>512</th>
   </tr>
   <tr>
     <td>ViT-B/16</td>
@@ -204,10 +198,12 @@ We also provide the ViT-{B,L}/16 model pre-trained on ImageNet-22K dataset.
     <td>71.1%</td>
     <td>79.0%</td>
     <td>84.4%</td>
-    <td><a href="https://drive.google.com/file/d/1djICe-Q9B7WPy_VOk8qtYRGc06wyp5Ct/view?usp=sharing">backbone (s)</a></td>
-    <td><a href="https://drive.google.com/file/d/1p_2xPf___1XOwvtHfRzXH9TfMhaObNDy/view?usp=sharing">full ckpt</a></td>
-    <td><a href="https://drive.google.com/file/d/1MGRkC8NEbK2aGA_iLzdDzJPSGBD-n6Ap/view?usp=sharing">args</a></td>
-    <td><a href="https://drive.google.com/file/d/1PbHXCewcdxrxGsJ-4zZc8oiTlFIXzkjO/view?usp=sharing">logs</a></td>
+    <td>\</td>
+    <td>\</td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16_pt22k/checkpoint_student.pth">backbone (s)</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16_pt22k/checkpoint.pth">full ckpt</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16_pt22k/args.txt">args</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16_pt22k/log.txt">logs</a></td>
   </tr>
   <tr>
     <td>ViT-L/16</td>
@@ -216,10 +212,12 @@ We also provide the ViT-{B,L}/16 model pre-trained on ImageNet-22K dataset.
     <td>70.6%</td>
     <td>81.7%</td>
     <td>86.6%</td>
-    <td><a href="https://drive.google.com/file/d/1KgtjSBdR-KFGmZnMnvAo5wvfzs880FcJ/view?usp=sharing">backbone (t)</a></td>
-    <td><a href="https://drive.google.com/file/d/1J4vEXLoZHGhu-fxCsUC3rpPoU_4izNxl/view?usp=sharing">full ckpt</a></td>
-    <td><a href="https://drive.google.com/file/d/1kVRhIk1FNggIwFouZyhxUNQ1efJHhti2/view?usp=sharing">args</a></td>
-    <td><a href="https://drive.google.com/file/d/1dJZfLyx6OSHjCCaipoh4jZfESgzmWVnL/view?usp=sharing">logs</a></td>
+    <td>87.5%</td>
+    <td>87.7%</td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_pt22k/checkpoint_teacher.pth">backbone (t)</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_pt22k/checkpoint.pth">full ckpt</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_pt22k/args.txt">args</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_pt22k/log.txt">logs</a></td>
   </tr>
 </table>
 
