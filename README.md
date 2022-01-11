@@ -16,7 +16,7 @@ iBOT is a novel self-supervised pre-training framework that performs masked imag
 
 ## Update :tada:
 - Update - ViT-L/16 with ImageNet-1K pre-training achieves **81.0%** in linear probing accuracy. ViT-L/16 with ImageNet-22K pre-training achieves **87.7%** in 512x fine-tuning accuracy.
-- Update - Random masking with a relatively larger prediction ratio [0.65, 0.75] performs slighly better than block-wise masking. For example, ViT-B/16 achieves an **84.1%** fine-tuning accuracy and a **51.5 box AP** in object detection.
+- Update - Random masking with a relatively larger prediction ratio [0.65, 0.75] performs slighly better than block-wise masking. For example, ViT-B/16 achieves an **84.1%** fine-tuning accuracy and a **51.5 box AP** in object detection. 
 - December 2021 - Release the code and pre-trained [models](https://github.com/bytedance/ibot#pre-trained-models).
 - November 2021 - Release the pre-print on [arXiv](https://arxiv.org/abs/2111.07832).
 
@@ -171,6 +171,18 @@ You can choose to download only the weights of the pre-trained `backbone` used f
     <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16/checkpoint.pth">full ckpt</a></td>
     <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16/args.txt">args</a></td>
     <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16/log.txt">logs</a></td>
+  </tr>
+  <tr>
+    <td>ViT-L/16</td>
+    <td>307M</td>
+    <td>Rand</td>
+    <td>77.7%</td>
+    <td>81.2%</td>
+    <td>85.0%</td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_rand_mask/checkpoint_teacher.pth">backbone (t)</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_rand_mask/checkpoint.pth">full ckpt</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_rand_mask/args.txt">args</a></td>
+    <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_rand_mask/log.txt">logs</a></td>
   </tr>
 </table>
 
