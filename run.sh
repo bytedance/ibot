@@ -168,7 +168,9 @@ if [[ $TYPE =~ imagenet_knn ]] || [[ $TYPE =~ imagenet_reg ]] || \
             WEIGHT_FILE=$SUB_OUTPUT_DIR/checkpoint_${KEY_LIST[$K]}.pth
             python3 $CURDIR/evaluation/classification_layer_decay/extract_backbone_weights.py \
                 $PRETRAINED $WEIGHT_FILE --checkpoint_key ${KEY_LIST[$K]}
-            python3 -m torch.distributed.launch --nproc_per_node=$GPUS_PER_NODE \
+            python3 -m torch.distributed.launch --nnodes ${TOTAL_NODES:-1} \
+                --node_rank ${NODE_ID:-0} --nproc_per_node=$GPUS_PER_NODE \
+                --master_addr=${MASTER_ADDR:-127.0.0.1} \
                 --master_port=$[${MASTER_PORT:-29500}-$K] \
                 $CURDIR/evaluation/classification_layer_decay/run_class_finetuning.py \
                 --finetune $WEIGHT_FILE \

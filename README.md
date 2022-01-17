@@ -24,6 +24,26 @@ iBOT is a novel self-supervised pre-training framework that performs masked imag
 
 See [installation structions](https://github.com/bytedance/ibot/blob/main/INSTALL.md) for details.
 
+## One-Line Command by Using `run.sh`
+
+We provide `run.sh` you can complete the pre-training + fine-tuning experiment cycle in a one-line command.
+
+### Arguments
+
+- `TYPE` is named by the rule of `dataset+task`. For example, pre-training on ImageNet-1K has a `TYPE` of imagenet_pretrain and linear probing evalution in ImageNet-1K has a `TYPE` of imagenet_linear.
+- `JOB_NAME` is customized job name to distinguish from different groups of experiments.
+- `ARCH` is the architecture of the pre-trained models.
+- `KEY` chooses which pre-trained model to be evaluated and can be set as either `teacher` (generally better) or `student` for one model. It can also be set as `teacher,student` and the script will distribute the evaluation of the two models to 2 out of all nodes.
+- `GPUS` is total GPUs needed for the evaluation. If the amount required `GPUS` exceed that of `MAX_GPUS` (GPUs for each node). `GPUS` should be able to split into `GPUS_PER_NODE x TOTAL_NODES`.
+- Other additional arguments can directly appended after these required ones. For example, `--lr 0.001`.
+
+
+For example, the following commands will automatically evaluate the models on K-NN and linear probing benchmark after the pre-training with `student` and `teacher` model distributed across 2 nodes.
+```
+TOTAL_NODES=2 NODE_ID=0 ./run.sh imagenet_pretrain+imagenet_knn+imagenet_linear vit_small student,teacher 16 // the first node
+TOTAL_NODES=2 NODE_ID=1 ./run.sh imagenet_pretrain+imagenet_knn+imagenet_linear vit_small student,teacher 16 // the second node
+```
+
 ## Training
 
 For a glimpse at the full documentation of iBOT pre-training, please run:
@@ -177,7 +197,7 @@ You can choose to download only the weights of the pre-trained `backbone` used f
     <td>307M</td>
     <td>Rand</td>
     <td>77.7%</td>
-    <td>81.2%</td>
+    <td>81.3%</td>
     <td>85.0%</td>
     <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_rand_mask/checkpoint_teacher.pth">backbone (t)</a></td>
     <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_rand_mask/checkpoint.pth">full ckpt</a></td>
