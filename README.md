@@ -26,7 +26,7 @@ See [installation structions](https://github.com/bytedance/ibot/blob/main/INSTAL
 
 ## One-Line Command by Using `run.sh`
 
-We provide `run.sh` you can complete the pre-training + fine-tuning experiment cycle in a one-line command.
+We provide `run.sh` with which you can complete the pre-training + fine-tuning experiment cycle in an one-line command.
 
 ### Arguments
 
@@ -37,8 +37,7 @@ We provide `run.sh` you can complete the pre-training + fine-tuning experiment c
 - `GPUS` is total GPUs needed for the evaluation. If the amount required `GPUS` exceed that of `MAX_GPUS` (GPUs for each node). `GPUS` should be able to split into `GPUS_PER_NODE x TOTAL_NODES`.
 - Other additional arguments can directly appended after these required ones. For example, `--lr 0.001`.
 
-
-For example, the following commands will automatically evaluate the models on K-NN and linear probing benchmark after the pre-training with `student` and `teacher` model distributed across 2 nodes.
+For example, the following command will automatically evaluate the models on K-NN and linear probing benchmark after the pre-training with `student` and `teacher` model distributed across 2 nodes:
 ```
 TOTAL_NODES=2 NODE_ID=0 ./run.sh imagenet_pretrain+imagenet_knn+imagenet_linear vit_small student,teacher 16 // the first node
 TOTAL_NODES=2 NODE_ID=1 ./run.sh imagenet_pretrain+imagenet_knn+imagenet_linear vit_small student,teacher 16 // the second node
