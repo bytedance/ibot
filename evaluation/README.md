@@ -1,8 +1,5 @@
 # Evaluating iBOT on Downstream Tasks
 
-### Arguments
-- `KEY` chooses which pre-trained model to be evaluated and can be set as either `teacher` (generally better) or `student` for one model. 
-
 ### k-NN Classification & Logistic Regression on ImageNet
 To evaluate k-NN classification or logistic regression on the frozen features, run:
 ```
