@@ -129,7 +129,7 @@ if [[ $TYPE =~ imagenet_knn ]] || [[ $TYPE =~ imagenet_reg ]] || \
                     --n_last_blocks $LINEAR_N_LAST_BLOCKS \
                     --avgpool_patchtokens $LINEAR_AVGPOOL \
                     --arch ${ARCH} \
-                    --checkpoint_key ${KEY_LIST[${key}]} \
+                    --checkpoint_key ${KEY_LIST[$K]} \
                     --output_dir $SUB_OUTPUT_DIR \
                     --data_path data/imagenet \
                     ${@:6}
