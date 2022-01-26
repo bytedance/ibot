@@ -1,6 +1,7 @@
 # Image BERT Pre-Training with iBOT <img width="32" alt="iBOT Icon" src=".github/ibot.png">
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ibot-image-bert-pre-training-with-online/self-supervised-image-classification-on)](https://paperswithcode.com/sota/self-supervised-image-classification-on?p=ibot-image-bert-pre-training-with-online)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ibot-image-bert-pre-training-with-online/unsupervised-image-classification-on-imagenet)](https://paperswithcode.com/sota/unsupervised-image-classification-on-imagenet?p=ibot-image-bert-pre-training-with-online) \
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ibot-image-bert-pre-training-with-online/self-supervised-image-classification-on)](https://paperswithcode.com/sota/self-supervised-image-classification-on?p=ibot-image-bert-pre-training-with-online) \
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ibot-image-bert-pre-training-with-online/self-supervised-image-classification-on-1)](https://paperswithcode.com/sota/self-supervised-image-classification-on-1?p=ibot-image-bert-pre-training-with-online)
 
 Official PyTorch implementation and pre-trained models for paper **iBOT: Image BERT Pre-Training with Online Tokenizer**. 
