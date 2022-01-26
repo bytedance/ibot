@@ -243,7 +243,7 @@ We also provide the ViT-{B,L}/16 model pre-trained on ImageNet-22K dataset.
     <td>82.3%</td>
     <td>86.6%</td>
     <td>87.5%</td>
-    <td>87.7%</td>
+    <td>87.8%</td>
     <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_pt22k/checkpoint_student.pth">backbone (s)</a></td>
     <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_pt22k/checkpoint.pth">full ckpt</a></td>
     <td><a href="https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitl_16_pt22k/args.txt">args</a></td>
