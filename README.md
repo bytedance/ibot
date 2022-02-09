@@ -14,9 +14,10 @@ Official PyTorch implementation and pre-trained models for paper **iBOT: Image B
 
 iBOT is a novel self-supervised pre-training framework that performs masked image modeling with self-distillation. iBOT pre-trained model shows local semantic features, which helps the model transfer well to downstream tasks both at a global scale and a local scale. For example, iBOT achieves strong performance on COCO object detection (**51.2 box AP** and **44.2 mask AP**) and ADE20K semantic segmentation (**50.0 mIoU**) with vanilla ViT-B/16. iBOT can also extract semantic-meaningful local parts, like **dog's ear :dog:**.
 
-## Update :tada:
+## News :tada:
+- January 2022 - The paper is accepted by ICLR, 2022.
 - Update - ViT-L/16 with ImageNet-1K pre-training achieves **81.0%** in linear probing accuracy. ViT-L/16 with ImageNet-22K pre-training achieves **87.8%** in 512x fine-tuning accuracy.
-- Update - Random masking with a relatively larger prediction ratio [0.65, 0.75] performs slighly better than block-wise masking. For example, ViT-B/16 achieves an **84.1%** fine-tuning accuracy and a **51.5 box AP** in object detection. 
+- Update - Random masking with a relatively larger prediction ratio performs slighly better than block-wise masking. For example, ViT-B/16 achieves an **84.1%** fine-tuning accuracy and a **51.5 box AP** in object detection. 
 - December 2021 - Release the code and pre-trained [models](https://github.com/bytedance/ibot#pre-trained-models).
 - November 2021 - Release the pre-print on [arXiv](https://arxiv.org/abs/2111.07832).
 
@@ -30,11 +31,11 @@ We provide `run.sh` with which you can complete the pre-training + fine-tuning e
 
 ### Arguments
 
-- `TYPE` is named by the rule of `dataset_task`. For example, pre-training on ImageNet-1K has a `TYPE` of imagenet_pretrain and linear probing evalution in ImageNet-1K has a `TYPE` of imagenet_linear. Different types of task can be appended in one command.
+- `TYPE` is named by the rule of dataset_task. For example, pre-training on ImageNet-1K has a TYPE of imagenet_pretrain and linear probing evalution on ImageNet-1K has a TYPE of imagenet_linear. Different types of task can be appended in one command.
 - `JOB_NAME` is the customized job name to distinguish from different groups of experiments.
 - `ARCH` is the architecture of the pre-trained models.
-- `KEY` chooses which pre-trained model to be evaluated and can be set as either `teacher` (generally better) or `student` for one model. It can also be set as `teacher,student` and the script will distribute the evaluation of the two models to 2 out of all nodes.
-- `GPUS` is total GPUs needed. If the amount required `GPUS` exceed that of `MAX_GPUS` (GPUs for each node). `GPUS` should be able to split into `GPUS_PER_NODE x TOTAL_NODES`.
+- `KEY` chooses which pre-trained model to be evaluated and can be set as either teacher (generally better) or student for one model. 
+- `GPUS` is GPUs needed for each node, and will be clamped by `MAX_GPUS` (default as 8).
 - Other additional arguments can directly appended after these required ones. For example, `--lr 0.001`.
 
 For example, the following command will automatically evaluate the models on K-NN and linear probing benchmark after the pre-training with `student` and `teacher` model distributed across 2 nodes:
@@ -334,7 +335,7 @@ If you find this repository useful, please consider giving a star :star: and cit
 @article{zhou2021ibot,
   title={iBOT: Image BERT Pre-Training with Online Tokenizer},
   author={Zhou, Jinghao and Wei, Chen and Wang, Huiyu and Shen, Wei and Xie, Cihang and Yuille, Alan and Kong, Tao},
-  journal={arXiv preprint arXiv:2111.07832},
-  year={2021}
+  journal={International Conference on Learning Representations (ICLR)},
+  year={2022}
 }
 ```
