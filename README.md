@@ -15,7 +15,7 @@ Official PyTorch implementation and pre-trained models for paper **iBOT: Image B
 iBOT is a novel self-supervised pre-training framework that performs masked image modeling with self-distillation. iBOT pre-trained model shows local semantic features, which helps the model transfer well to downstream tasks both at a global scale and a local scale. For example, iBOT achieves strong performance on COCO object detection (**51.2 box AP** and **44.2 mask AP**) and ADE20K semantic segmentation (**50.0 mIoU**) with vanilla ViT-B/16. iBOT can also extract semantic-meaningful local parts, like **dog's ear :dog:**.
 
 ## News :tada:
-- January 2022 - The paper is accepted by ICLR, 2022.
+- January 2022 - The paper is accepted by ICLR 2022.
 - Update - ViT-L/16 with ImageNet-1K pre-training achieves **81.0%** in linear probing accuracy. ViT-L/16 with ImageNet-22K pre-training achieves **87.8%** in 512x fine-tuning accuracy.
 - Update - Random masking with a relatively larger prediction ratio performs slighly better than block-wise masking. For example, ViT-B/16 achieves an **84.1%** fine-tuning accuracy and a **51.5 box AP** in object detection. 
 - December 2021 - Release the code and pre-trained [models](https://github.com/bytedance/ibot#pre-trained-models).
