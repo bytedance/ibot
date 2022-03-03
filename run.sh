@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 CURDIR=$(cd $(dirname $0); pwd)
 cd $CURDIR
+export PYTHONPATH="$PYTHONPATH:$CURDIR"
 echo 'The work dir is: ' $CURDIR
 
 TYPE=$1
@@ -352,7 +353,8 @@ if [[ $TYPE =~ imagenet_knn ]] || [[ $TYPE =~ imagenet_reg ]] || \
                 --launcher pytorch \
                 --work-dir $SUB_OUTPUT_DIR \
                 --deterministic \
-                --options model.pretrained=$WEIGHT_FILE \
+                --options model.backbone.use_checkpoint=True \
+                model.pretrained=$WEIGHT_FILE \
                 ${@:6}
             python3 -m torch.distributed.launch --nproc_per_node=$GPUS_PER_NODE \
                 --master_port=$[${MASTER_PORT:-29500}-$K] \
@@ -361,7 +363,8 @@ if [[ $TYPE =~ imagenet_knn ]] || [[ $TYPE =~ imagenet_reg ]] || \
                 $SUB_OUTPUT_DIR/iter_160000.pth \
                 --launcher pytorch \
                 --eval mIoU \
-                --options ${@:6}
+                --options model.backbone.use_checkpoint=True \
+                ${@:6}
         done
     fi
     if [[ $TYPE =~ ade20k_seg ]] && [[ ! $TYPE =~ pretrain ]]; then
@@ -380,7 +383,8 @@ if [[ $TYPE =~ imagenet_knn ]] || [[ $TYPE =~ imagenet_reg ]] || \
                 --launcher pytorch \
                 --work-dir $SUB_OUTPUT_DIR \
                 --deterministic \
-                --options model.pretrained=$WEIGHT_FILE \
+                --options model.backbone.use_checkpoint=True \
+                model.pretrained=$WEIGHT_FILE \
                 ${@:6}
             python3 -m torch.distributed.launch --nproc_per_node=$GPUS_PER_NODE \
                 --master_port=$[${MASTER_PORT:-29500}-$K] \
@@ -389,7 +393,8 @@ if [[ $TYPE =~ imagenet_knn ]] || [[ $TYPE =~ imagenet_reg ]] || \
                 $SUB_OUTPUT_DIR/iter_160000.pth \
                 --launcher pytorch \
                 --eval mIoU \
-                --options ${@:6}
+                --options model.backbone.use_checkpoint=True \
+                ${@:6}
         done
     fi
     if [[ $TYPE =~ coco_det ]] && [[ ! $TYPE =~ pretrain ]]; then
