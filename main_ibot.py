@@ -355,9 +355,9 @@ def train_ibot(args):
         }
         if fp16_scaler is not None:
             save_dict['fp16_scaler'] = fp16_scaler.state_dict()
-        torch.save(save_dict, os.path.join(args.output_dir, 'checkpoint.pth'))
+        utils.save_on_master(save_dict, os.path.join(args.output_dir, 'checkpoint.pth'))
         if args.saveckp_freq and (epoch % args.saveckp_freq == 0) and epoch:
-            torch.save(save_dict, os.path.join(args.output_dir, f'checkpoint{epoch:04}.pth'))
+            utils.save_on_master(save_dict, os.path.join(args.output_dir, f'checkpoint{epoch:04}.pth'))
         log_stats = {**{f'train_{k}': v for k, v in train_stats.items()},
                      'epoch': epoch}
         if utils.is_main_process():
@@ -376,7 +376,20 @@ def train_one_epoch(student, teacher, teacher_without_ddp, ibot_loss, data_loade
                     fp16_scaler, args):
     metric_logger = utils.MetricLogger(delimiter="  ")
     header = 'Epoch: [{}/{}]'.format(epoch, args.epochs)
-    real_labels, pred_labels = [], []
+    
+    # common params
+    names_q, params_q, names_k, params_k = [], [], [], []
+    for name_q, param_q in student.module.named_parameters():
+        names_q.append(name_q)
+        params_q.append(param_q)
+    for name_k, param_k in teacher_without_ddp.named_parameters():
+        names_k.append(name_k)
+        params_k.append(param_k)
+    names_common = list(set(names_q) & set(names_k))
+    params_q = [param_q for name_q, param_q in zip(names_q, params_q) if name_q in names_common]
+    params_k = [param_k for name_k, param_k in zip(names_k, params_k) if name_k in names_common]
+
+    pred_labels, real_labels = [], []
     for it, (images, labels, masks) in enumerate(metric_logger.log_every(data_loader, 10, header)):
         # update weight decay and learning rate according to their schedule
         it = len(data_loader) * epoch + it  # global training iteration
@@ -438,16 +451,6 @@ def train_one_epoch(student, teacher, teacher_without_ddp, ibot_loss, data_loade
         # EMA update for the teacher
         with torch.no_grad():
             m = momentum_schedule[it]  # momentum parameter
-            names_q, params_q, names_k, params_k = [], [], [], []
-            for name_q, param_q in student.module.named_parameters():
-                names_q.append(name_q)
-                params_q.append(param_q)
-            for name_k, param_k in teacher_without_ddp.named_parameters():
-                names_k.append(name_k)
-                params_k.append(param_k)
-            names_common = list(set(names_q) & set(names_k))
-            params_q = [param_q for name_q, param_q in zip(names_q, params_q) if name_q in names_common]
-            params_k = [param_k for name_k, param_k in zip(names_k, params_k) if name_k in names_common]
             for param_q, param_k in zip(params_q, params_k):
                 param_k.data.mul_(m).add_((1 - m) * param_q.detach().data)
 
